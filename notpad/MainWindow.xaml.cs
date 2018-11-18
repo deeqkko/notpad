@@ -13,6 +13,8 @@ namespace notpad
         public MainWindow()
         {
             InitializeComponent();
+            documentFilename = "New Document";
+            Title = "Notpad - "+documentFilename;
         }
 
         
@@ -65,6 +67,7 @@ namespace notpad
                     Paper.Clear();
                     documentFilename = OpenDialog.FileName;
                     ReadFromFile(documentFilename);
+                    Title = "Notpad - "+ documentFilename;
                 }
             
         }
@@ -105,6 +108,8 @@ namespace notpad
         private void MenuItem_Close(object sender, RoutedEventArgs e)
         {
             Paper.Clear();
+            documentFilename = "New Document";
+            Title = "Notpad - " + documentFilename;
         }
 
         private void MenuItem_Copy(object sender, EventArgs e)
