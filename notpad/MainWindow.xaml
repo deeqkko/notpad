@@ -5,21 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:notpad"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Notpad" Height="450" Width="800">
     <DockPanel>
         <Menu DockPanel.Dock="Top" BorderBrush="AliceBlue" BorderThickness="1">
             <MenuItem Header="_File">
-                <MenuItem Header="E_xit"/>
+                <MenuItem Header="_Open" Click="MenuItem_Open"/>
+                <MenuItem Header="_Close" Click="MenuItem_Close"/>
+                <MenuItem Header="_Save as..." Click="MenuItem_SaveAs"/>
+                <MenuItem Header="_Print..." Click="MenuItem_Print"/>
+                <MenuItem Header="E_xit" Click="MenuItem_Exit"/>
             </MenuItem>
             <MenuItem Header="_Edit">
-                <MenuItem Header="_Copy"/>
-                <MenuItem Header="_Paste"/>
+                <MenuItem Header="_Cut" Click="MenuItem_Cut"/>
+                <MenuItem Header="_Copy" Click="MenuItem_Copy"/>
+                <MenuItem Header="_Paste" Click="MenuItem_Paste"/>
                 <MenuItem Header="_Font..."/>
             </MenuItem>
-            
+
         </Menu>
         <Grid>
+            <TextBox x:Name="Paper" Height="Auto" Margin="0" TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True" />
         </Grid>
     </DockPanel>
-   
+
 </Window>
