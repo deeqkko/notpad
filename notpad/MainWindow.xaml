@@ -3,23 +3,25 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p="clr-namespace:notpad.Properties"
         xmlns:local="clr-namespace:notpad"
         mc:Ignorable="d"
-        Title="" Height="450" Width="800">
+        Height="450" Width="800" Loaded="Window_Loaded" Closed="Window_Closed">
     <DockPanel>
         <Menu DockPanel.Dock="Top" BorderBrush="AliceBlue" BorderThickness="1">
-            <MenuItem Header="_File">
-                <MenuItem Header="_Open" Click="MenuItem_Open"/>
-                <MenuItem Header="_Close" Click="MenuItem_Close"/>
-                <MenuItem Header="_Save as..." Click="MenuItem_SaveAs"/>
-                <MenuItem Header="_Print..." Click="MenuItem_Print"/>
-                <MenuItem Header="E_xit" Click="MenuItem_Exit"/>
+            <MenuItem Header="{x:Static p:Resources.FileMenu}">
+                <MenuItem Header="{x:Static p:Resources.File_Open}" Click="MenuItem_Open"/>
+                <MenuItem Header="{x:Static p:Resources.File_Close}" Click="MenuItem_Close"/>
+                <MenuItem Header="{x:Static p:Resources.File_Save_as}" Click="MenuItem_SaveAs"/>
+                <MenuItem Header="{x:Static p:Resources.File_Settings}" Click="MenuItem_Settings"/>
+                <MenuItem Header="{x:Static p:Resources.File_Print}" Click="MenuItem_Print"/>
+                <MenuItem Header="{x:Static p:Resources.File_Exit}" Click="MenuItem_Exit"/>
             </MenuItem>
-            <MenuItem Header="_Edit">
-                <MenuItem Header="_Cut" Click="MenuItem_Cut"/>
-                <MenuItem Header="_Copy" Click="MenuItem_Copy"/>
-                <MenuItem Header="_Paste" Click="MenuItem_Paste"/>
-                <MenuItem Header="_Font..."/>
+            <MenuItem Header="{x:Static p:Resources.EditMenu}">
+                <MenuItem Header="{x:Static p:Resources.Edit_Cut}" Click="MenuItem_Cut"/>
+                <MenuItem Header="{x:Static p:Resources.Edit_Copy}" Click="MenuItem_Copy"/>
+                <MenuItem Header="{x:Static p:Resources.Edit_Paste}" Click="MenuItem_Paste"/>
+                <MenuItem Header="{x:Static p:Resources.Edit_Font}" Click="MenuItem_Font"/>
             </MenuItem>
 
         </Menu>

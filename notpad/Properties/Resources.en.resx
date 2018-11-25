@@ -181,18 +181,18 @@
     <value>Swedish</value>
   </data>
   <data name="File_Settings" xml:space="preserve">
-    <value>Settings...</value>
+    <value>Language settings...</value>
   </data>
   <data name="MessageBoxMsg" xml:space="preserve">
     <value>Restart Notpad to change language.</value>
-  </data>
-  <data name="SettingsWindow_LangLabel" xml:space="preserve">
-    <value>Select language</value>
   </data>
   <data name="MessageBox_Header" xml:space="preserve">
     <value>Select language</value>
   </data>
   <data name="SettingsWindow_Header" xml:space="preserve">
-    <value>Language Settings</value>
+    <value>Language settings</value>
+  </data>
+  <data name="SettingsWindow_LangLabel" xml:space="preserve">
+    <value>Select language</value>
   </data>
 </root>

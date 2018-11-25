@@ -12,15 +12,19 @@ namespace notpad
     {
         public MainWindow()
         {
+            System.Threading.Thread.CurrentThread.CurrentUICulture =
+            new System.Globalization.CultureInfo(notpad.Properties.Settings.Default.languageSetting);
             InitializeComponent();
-            documentFilename = "New Document";
-            Title = "Notpad - "+documentFilename;
+            documentFilename = notpad.Properties.Resources.NewTextFile;
+            Title = notpad.Properties.Resources.MainWIndowTitle+documentFilename;
         }
 
-        
+
         int lineCount;
         string documentFilename;
-     
+        internal string languageSetting = notpad.Properties.Settings.Default.languageSetting;
+        internal int selection;
+
         //Read and write operations
         private void WriteToFile(string documentFilename)
         {
@@ -32,7 +36,7 @@ namespace notpad
                 lineText = lineText.TrimEnd();
                 writer.WriteLine(lineText);
                 i++;
-                Console.WriteLine("INFO: Line number " + i + "wrote.");
+                
             }
             writer.Close();
         }
@@ -56,9 +60,8 @@ namespace notpad
         {
             
             Microsoft.Win32.OpenFileDialog OpenDialog = new Microsoft.Win32.OpenFileDialog();
-            OpenDialog.FileName = "Document";
             OpenDialog.DefaultExt = ".txt";
-            OpenDialog.Filter = "Text Document |*.txt";
+            OpenDialog.Filter = notpad.Properties.Resources.FiletypeFilter;
 
             bool? result = OpenDialog.ShowDialog();
 
@@ -67,7 +70,7 @@ namespace notpad
                     Paper.Clear();
                     documentFilename = OpenDialog.FileName;
                     ReadFromFile(documentFilename);
-                    Title = "Notpad - "+ documentFilename;
+                    Title = notpad.Properties.Resources.MainWIndowTitle+documentFilename;
                 }
             
         }
@@ -77,12 +80,13 @@ namespace notpad
             PrintDialog printDialog = new PrintDialog();
             if (printDialog.ShowDialog() == true)
             {
-                printDialog.PrintVisual(Paper, "Tähän tiedostonimi");
+                printDialog.PrintVisual(Paper, documentFilename);
             }
         }
 
         private void MenuItem_Exit(object sender, RoutedEventArgs e)
         {
+            Properties.Settings.Default.Save();
             System.Windows.Application.Current.Shutdown();
         }
 
@@ -90,26 +94,27 @@ namespace notpad
         {
             var SaveAsDialog = new Microsoft.Win32.SaveFileDialog
             {
-                FileName = "My TextDocument.txt",
+                FileName = notpad.Properties.Resources.DefaultSaveFileName,
                 DefaultExt = ".txt",
-                Filter = "Text Document |*.txt"
+                Filter = notpad.Properties.Resources.FiletypeFilter
             };
 
             bool? result = SaveAsDialog.ShowDialog();
 
             if (result == true)
             {
-                int lineCount = Paper.LineCount;
+                lineCount = Paper.LineCount;
                 documentFilename = SaveAsDialog.FileName;
                 WriteToFile(documentFilename);
+                Title = notpad.Properties.Resources.MainWIndowTitle + documentFilename;
             }
         }
 
         private void MenuItem_Close(object sender, RoutedEventArgs e)
         {
             Paper.Clear();
-            documentFilename = "New Document";
-            Title = "Notpad - " + documentFilename;
+            documentFilename = notpad.Properties.Resources.NewTextFile;
+            Title = notpad.Properties.Resources.MainWIndowTitle + documentFilename;
         }
 
         private void MenuItem_Copy(object sender, EventArgs e)
@@ -138,6 +143,42 @@ namespace notpad
             {
                 Paper.Cut();
             }
+        }
+
+        private void MenuItem_Font(object sender, RoutedEventArgs e)
+        {
+            FontWindow ChangeFont = new FontWindow();
+
+            if (ChangeFont.ShowDialog() == true)
+            {
+                Paper.FontSize = selection;
+            }
+
+            
+            
+        }
+
+        private void MenuItem_Settings(object sender, RoutedEventArgs e)
+        {
+            SettingsWindow ChangeLanguae = new SettingsWindow();
+
+            if (ChangeLanguae.ShowDialog() == true)
+            {
+                Properties.Settings.Default.languageSetting = languageSetting;
+                
+                MessageBox.Show(notpad.Properties.Resources.MessageBoxMsg, notpad.Properties.Resources.MessageBox_Header);
+            }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            System.Threading.Thread.CurrentThread.CurrentUICulture =
+            new System.Globalization.CultureInfo(languageSetting);
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.Save();
         }
     }
 }

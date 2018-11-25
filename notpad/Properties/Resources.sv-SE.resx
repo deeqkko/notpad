@@ -118,81 +118,81 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Cancel_Button" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Avbryt</value>
   </data>
   <data name="ComboBoxHeader" xml:space="preserve">
-    <value>Font Size</value>
+    <value>Teckens storlek</value>
   </data>
   <data name="EditMenu" xml:space="preserve">
-    <value>Edit</value>
+    <value>Redigera</value>
   </data>
   <data name="Edit_Copy" xml:space="preserve">
-    <value>_Copy</value>
+    <value>_Kopiera</value>
   </data>
   <data name="Edit_Cut" xml:space="preserve">
-    <value>_Cut</value>
+    <value>_Klipp ut</value>
   </data>
   <data name="Edit_Font" xml:space="preserve">
-    <value>_Font...</value>
+    <value>_Tecken...</value>
   </data>
   <data name="Edit_Paste" xml:space="preserve">
-    <value>_Paste</value>
+    <value>_Klistra in</value>
   </data>
   <data name="FileMenu" xml:space="preserve">
-    <value>File</value>
+    <value>Arkiv</value>
   </data>
   <data name="File_Close" xml:space="preserve">
-    <value>_Close</value>
+    <value>_Stäng av</value>
   </data>
   <data name="File_Exit" xml:space="preserve">
-    <value>E_xit</value>
+    <value>_Avsluta</value>
   </data>
   <data name="File_Open" xml:space="preserve">
-    <value>_Open</value>
+    <value>_Öppna...</value>
   </data>
   <data name="File_Print" xml:space="preserve">
-    <value>_Print</value>
+    <value>_Skriv ut...</value>
   </data>
   <data name="File_Save_as" xml:space="preserve">
-    <value>_Save as...</value>
+    <value>_Spara som...</value>
   </data>
   <data name="FontWindowTitle" xml:space="preserve">
-    <value>Font size</value>
+    <value>Välja Teckensnitt</value>
   </data>
   <data name="MainWIndowTitle" xml:space="preserve">
     <value>Notpad - </value>
   </data>
   <data name="NewTextFile" xml:space="preserve">
-    <value>New Document</value>
+    <value>Ny Textdokument</value>
   </data>
   <data name="OK_Button" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="DefaultSaveFileName" xml:space="preserve">
-    <value>My TextDocument.txt</value>
+    <value>Mitt Textdokument.txt</value>
   </data>
   <data name="FiletypeFilter" xml:space="preserve">
-    <value>Text Document |*.txt</value>
-  </data>
-  <data name="CB_Item_English" xml:space="preserve">
-    <value>English</value>
-  </data>
-  <data name="CB_Item_Swedish" xml:space="preserve">
-    <value>Swedish</value>
+    <value>Textdokument |*.txt</value>
   </data>
   <data name="File_Settings" xml:space="preserve">
-    <value>Settings...</value>
+    <value>Spårk inställningar</value>
+  </data>
+  <data name="CB_Item_English" xml:space="preserve">
+    <value>Engelska</value>
+  </data>
+  <data name="CB_Item_Swedish" xml:space="preserve">
+    <value>Svenska</value>
   </data>
   <data name="MessageBoxMsg" xml:space="preserve">
-    <value>Restart Notpad to change language.</value>
-  </data>
-  <data name="SettingsWindow_LangLabel" xml:space="preserve">
-    <value>Select language</value>
+    <value>Starta om Notpad för att byta språk.</value>
   </data>
   <data name="MessageBox_Header" xml:space="preserve">
-    <value>Select language</value>
+    <value>Välja språk</value>
   </data>
   <data name="SettingsWindow_Header" xml:space="preserve">
-    <value>Language Settings</value>
+    <value>Spårk inställningar</value>
+  </data>
+  <data name="SettingsWindow_LangLabel" xml:space="preserve">
+    <value>Välja språk</value>
   </data>
 </root>

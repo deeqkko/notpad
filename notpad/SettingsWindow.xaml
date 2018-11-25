@@ -1,0 +1,17 @@
+﻿<Window x:Class="notpad.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p="clr-namespace:notpad.Properties"
+        xmlns:local="clr-namespace:notpad"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.SettingsWindow_Header}" Height="226.923" Width="392.308">
+    <Grid>
+        <Button x:Name="OK"  Content="{x:Static p:Resources.OK_Button}" HorizontalAlignment="Left" Margin="47,142,0,0" VerticalAlignment="Top" Width="101" Height="30" Click="Button_OK"/>
+        <Button x:Name="Cancel" Content="{x:Static p:Resources.Cancel_Button}" HorizontalAlignment="Left" Margin="240,142,0,0" VerticalAlignment="Top" Width="101" Height="30" IsCancel="True"/>
+        <ComboBox x:Name="Lang" HorizontalAlignment="Left" Margin="87,52,0,0" VerticalAlignment="Top" Width="221" SelectionChanged="ComboBox_SelectionChanged"/>
+        <TextBlock x:Name="LangLabel" HorizontalAlignment="Left" Margin="87,31,0,0" TextWrapping="Wrap" Text="{x:Static p:Resources.SettingsWindow_LangLabel}" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
